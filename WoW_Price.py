@@ -9,7 +9,7 @@ from io import BytesIO
 
 time = datetime.datetime.now()
 logging.basicConfig(level=logging.INFO,
-                    filename=f"Token module - {time.strftime('%d')}-{time.strftime('%b')}-{time.strftime('%Y')} - {time.strftime('%H')}-{time.strftime('%M')}-{time.strftime('%S')}.log",
+                    filename=f"Token_module_{time.strftime('%d')}-{time.strftime('%b')}-{time.strftime('%Y')}__{time.strftime('%H')}-{time.strftime('%M')}-{time.strftime('%S')}.log",
                     filemode="w",
                     format="%(asctime)s - %(levelname)s - %(message)s")
 

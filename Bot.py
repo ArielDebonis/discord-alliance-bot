@@ -10,7 +10,7 @@ import asyncio
 
 hora = datetime.datetime.now()
 logging.basicConfig(level=logging.INFO,
-                    filename=f"Bot module - {hora.strftime('%d')}-{hora.strftime('%b')}-{hora.strftime('%Y')} - {hora.strftime('%H')}-{hora.strftime('%M')}-{hora.strftime('%S')}.log",
+                    filename=f"Bot_module_{hora.strftime('%d')}-{hora.strftime('%b')}-{hora.strftime('%Y')}__{hora.strftime('%H')}-{hora.strftime('%M')}-{hora.strftime('%S')}.log",
                     filemode="w",
                     format="%(asctime)s - %(levelname)s - %(message)s")
 
