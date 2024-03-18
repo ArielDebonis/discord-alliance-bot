@@ -1,0 +1,6 @@
+discord.py==2.3.2
+logging==0.4.9.6
+phyton-decouple==3.8
+phyton-dotenv==1.0.1
+request==2.31.0
+pycurl==7.45.3
