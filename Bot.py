@@ -22,10 +22,13 @@ client_token = config("token_discord")
 def precios():
     try:
         usdt = precio_usdt()
+        logging.info(f'precio_usdt {usdt}')
         texto_usdt = f'USDT/Bs C: {usdt[0]} V: {usdt[1]}'
         token_de_wow = wow.precio()
+        logging.info(f'wow.precio {token_de_wow}')
         texto_wow = f'WoW Token: {token_de_wow} Gold'
         lista = (texto_usdt,texto_wow)
+        logging.info(f'lista de precios: {lista}')
         return lista
     except Exception as e:
         logging.exception("Error - {}".format(e))
@@ -34,8 +37,11 @@ def precios():
 @tasks.loop(seconds=10)
 async def mensaje():
     try:
+        logging.info('mensaje on')
         estados = precios()
+        logging.info('estados on')
         for estado in estados:
+            logging.info('for activado')
             await client.change_presence(activity=discord.CustomActivity(estado))
             await asyncio.sleep(5)
     except Exception as e:
@@ -46,6 +52,7 @@ async def on_ready():
     try:
         await client.tree.sync()
         mensaje.start()
+        logging.info('mensaje.start on')
     except Exception as e:
         logging.exception("Error - {}".format(e))
         
